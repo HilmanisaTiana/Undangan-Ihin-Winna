@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Undangan Pernikahan Ihin & Winna · 25 Agustus 2026</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Cinzel:wght@400;500;600&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <audio id="bg-music" loop>
+    <source src="../musik/bunga abadi.mp3" type="audio/mpeg">
+  </audio>
+  
+  <canvas id="petalCanvas"></canvas>
+  
+  <button id="music-toggle" title="Toggle Musik">
+    <span class="pring"></span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18V5l12-2v13"></path>
+      <circle cx="6" cy="18" r="3"></circle>
+      <circle cx="18" cy="16" r="3"></circle>
+    </svg>
+  </button>
+
+  <!-- PRE-COVER -->
+  <!-- PRE-COVER -->
+  <div id="pre-cover">
+    
+    <!-- SVG Floral Kiri Atas -->
+    <svg class="bg-floral floral-top-left floating-tl" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+      <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+      <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+      <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+      <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+      <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+      <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+      <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+      <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+      <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+      <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+      <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+    </svg>
+
+    <!-- SVG Floral Kanan Bawah -->
+    <svg class="bg-floral floral-bottom-right floating-br" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+      <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+      <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+      <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+      <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+      <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+      <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+      <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+      <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+      <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+      <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+      <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+    </svg>
+
+    <div class="pre-content">
+      <div class="pre-to">Kepada Yth.</div>
+      <div class="pre-recipient" id="nama-tamu">Tamu Undangan</div>
+      <div class="pre-sub">Beserta Keluarga</div>
+      <div class="pre-divider"></div>
+      <div class="pre-invite-label">Kami mengundang dalam acara pernikahan</div>
+      <div class="pre-names-preview">Ihin & Winna</div>
+      <button class="btn-dark bold-btn" onclick="showCover()"><span>✉  Buka Undangan</span></button>
+    </div>
+  </div>
+
+  <!-- COVER -->
+  <div id="cover">
+    <div id="cover-photo"></div>
+    <div class="cover-content">
+      <div class="cover-bism">&#65021;</div>
+      <div class="cover-bism-sub">Bismillahirrahmanirrahim</div>
+      <div class="cover-label">The Wedding of</div>
+      <div class="cover-name">IHIN</div>
+      <div class="cover-amp">&</div>
+      <div class="cover-name">WINNA</div>
+      <div class="cover-div"><div class="cdot"></div></div>
+      <div class="cover-date">Selasa · 25 Agustus 2026</div>
+     <button class="btn-light bold-btn" onclick="openInvitation()"><span>↓  Lihat Undangan</span></button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div id="main-content">
+    
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <!-- SVG Floral Kiri Atas -->
+      <svg class="bg-floral floral-top-left floating-tl" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+        <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+        <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+        <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+        <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+        <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+        <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+        <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+        <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+        <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+      </svg>
+      <!-- SVG Floral Kanan Atas -->
+      <svg class="bg-floral floral-top-right floating-tr" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+        <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+        <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+        <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+        <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+        <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+        <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+        <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+        <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+        <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+      </svg>
+
+      <div class="reveal hero-inner">
+        <div class="hero-bism">&#65021;</div>
+        <div class="hero-bism-sub">Bismillahirrahmanirrahim</div>
+        <div class="hero-eye">The Wedding of</div>
+        <div class="hero-nm">IHIN, S.H.</div>
+        <div class="hero-amp">&</div>
+        <div class="hero-nm">WINNA FAUZIAH H, S.Sos.</div>
+        <div class="hdiv"><div class="cdot"></div></div>
+        <div class="hero-date">Selasa · 25 Agustus 2026</div>
+        <div class="hero-quote">
+          “Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.”
+          <cite class="hero-qs">— QS. Ar-Rum : 21 —</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMPELAI SECTION -->
+    <div class="sw bg-a">
+      <!-- SVG Floral Kiri Atas -->
+      <svg class="bg-floral floral-top-left floating-tl" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+        <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+        <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+        <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+        <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+        <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+        <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+        <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+        <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+        <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+      </svg>
+      <!-- SVG Floral Kanan Atas -->
+      <svg class="bg-floral floral-top-right floating-tr" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+        <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+        <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+        <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+        <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+        <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+        <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+        <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+        <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+        <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+      </svg>
+
+      <div class="sep"><svg viewBox="0 0 200 16" fill="none"><line x1="0" y1="8" x2="80" y2="8" stroke="#B89A72" stroke-width="1" opacity=".5"/><circle cx="89" cy="8" r="3" fill="#C4963C" opacity=".4"/><circle cx="100" cy="8" r="5" fill="#C4963C" opacity=".5"/><circle cx="111" cy="8" r="3" fill="#C4963C" opacity=".4"/><line x1="120" y1="8" x2="200" y2="8" stroke="#B89A72" stroke-width="1" opacity=".5"/></svg></div>
+      <div class="sec reveal">
+        <div class="stag">Yang Berbahagia</div>
+<div class="stit">Mempelai</div>
+
+<div class="sdiv"><div class="sdot"></div></div>
+
+<p class="sdesc" id="ucapan">
+  Assalamualaikum Warahmatullahi Wabarakatuh.<br>
+  Dengan memohon rahmat dan ridho Allah Swt. Kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan putra-putri kami:
+</p>
+
+        <div class="mrow">
+          <div class="mcard">
+            <div class="micon"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M12 13c-4 0-7 2-7 4v1h14v-1c0-2-3-4-7-4z"/></svg></div>
+            <div class="mnm">Ihin, S.H.</div><div class="mgl"></div><div class="mrol">Mempelai Pria</div>
+            <div class="mpl">Putra dari</div>
+            <div class="mpar"><strong>Bapak Subandi (Alm.)</strong><span class="ap">&</span><strong>Ibu Edah</strong></div>
+            <a href="https://www.instagram.com/uhalahel_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==target="_blank" rel="noopener" class="igbtn" title="Instagram Winna">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+          
+          <div class="mamp">&</div>
+          
+          <div class="mcard">
+            <div class="micon"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M12 13c-4 0-7 2-7 4v1h14v-1c0-2-3-4-7-4z"/><path d="M12 17v4M9 20h6" stroke="#5C4020" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg></div>
+            <div class="mnm">Winna Fauziah Hartati, S.Sos.</div><div class="mgl"></div><div class="mrol">Mempelai Wanita</div>
+            <div class="mpl">Putri dari</div>
+            <div class="mpar"><strong>Bapak Surhana (Alm.)</strong><span class="ap">&</span><strong>Ibu Teti Rosmiati</strong></div>
+            <a href="https://www.instagram.com/winnafauziahh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="igbtn" title="Instagram Winna">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COUNTDOWN SECTION -->
+    <div class="sw bg-b">
+      <!-- SVG Floral Kiri Atas -->
+      <svg class="bg-floral floral-top-left floating-tl" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+        <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+        <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+        <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+        <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+        <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+        <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+        <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+        <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+        <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+      </svg>
+      <!-- SVG Floral Kanan Atas -->
+      <svg class="bg-floral floral-top-right floating-tr" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+        <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+        <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+        <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+        <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+        <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+        <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+        <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+        <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+        <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+      </svg>
+
+      <div class="sep" style="background:transparent;"><svg viewBox="0 0 200 16" fill="none"><line x1="0" y1="8" x2="80" y2="8" stroke="#B89A72" stroke-width="1" opacity=".5"/><circle cx="89" cy="8" r="3" fill="#C4963C" opacity=".4"/><circle cx="100" cy="8" r="5" fill="#C4963C" opacity=".5"/><circle cx="111" cy="8" r="3" fill="#C4963C" opacity=".4"/><line x1="120" y1="8" x2="200" y2="8" stroke="#B89A72" stroke-width="1" opacity=".5"/></svg></div>
+      <div class="sec reveal">
+        <div class="stag">Menuju Hari Istimewa</div>
+        <div class="stit">Hitung Mundur</div>
+        <div class="sdiv"><div class="sdot"></div></div>
+        <div class="ccard">
+          <div style="font-family:'Cinzel',serif;font-size:clamp(.70rem,1.4vw,.67rem);letter-spacing:4px;text-transform:uppercase;color:var(--brown-mid); font-weight: bold;">Selasa, 25 Agustus 2026</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.83rem,1.9vw,.93rem);color:var(--text-soft);margin-top:4px; font-weight: bold;letter-spacing: 1.4px;">Menghitung setiap momen bersama Anda</div>
+          <div class="cdgrid">
+            <div class="cdcell"><div class="cdnum" id="cd-days">00</div><div class="cdlbl">Hari</div></div>
+            <div class="cdcell"><div class="cdnum" id="cd-hours">00</div><div class="cdlbl">Jam</div></div>
+            <div class="cdcell"><div class="cdnum" id="cd-mins">00</div><div class="cdlbl">Menit</div></div>
+            <div class="cdcell"><div class="cdnum" id="cd-secs">00</div><div class="cdlbl">Detik</div></div>
+          </div>
+          
+          <div class="cal-wrap">
+            <div class="cal-txt">Tandai tanggal di kalender Anda agar tidak terlewatkan momen bahagia ini.</div>
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Ihin+%26+Winna&dates=20260825T013000Z/20260825T080000Z&details=Acara+Pernikahan+Ihin+dan+Winna&location=Pawenang+RT02%2FRW01%2C+Margamukti%2C+Sumedang+Utara" target="_blank" class="btn-cal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <circle cx="12" cy="15" r="1.5" fill="currentColor" stroke="none"></circle>
+              </svg>
+              <span>Simpan ke Kalender</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RANGKAIAN ACARA SECTION -->
+    <div class="sw bg-a">
+      <!-- SVG Floral Kiri Atas -->
+      <svg class="bg-floral floral-top-left floating-tl" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+        <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+        <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+        <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+        <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+        <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+        <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+        <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+        <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+        <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+      </svg>
+      <!-- SVG Floral Kanan Atas -->
+      <svg class="bg-floral floral-top-right floating-tr" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+        <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+        <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+        <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+        <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+        <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+        <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+        <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+        <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+        <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+      </svg>
+
+      <div class="sep"><svg viewBox="0 0 200 16" fill="none"><line x1="0" y1="8" x2="80" y2="8" stroke="#B89A72" stroke-width="1" opacity=".5"/><circle cx="89" cy="8" r="3" fill="#C4963C" opacity=".4"/><circle cx="100" cy="8" r="5" fill="#C4963C" opacity=".5"/><circle cx="111" cy="8" r="3" fill="#C4963C" opacity=".4"/><line x1="120" y1="8" x2="200" y2="8" stroke="#B89A72" stroke-width="1" opacity=".5"/></svg></div>
+      <div class="sec reveal">
+        <div class="stag">Rangkaian Acara</div>
+        <div class="stit">Detail Acara</div>
+        <div class="sdiv"><div class="sdot"></div></div>
+        <div class="agrid">
+          <div class="acard">
+            <div class="aiw"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+            <div class="atype">Akad Nikah</div>
+            <div class="abody"><strong>Selasa, 25 Agustus 2026</strong><br>Pukul 08.30 – 11.00 WIB<br><em>Momen suci ijab kabul</em></div>
+          </div>
+          <div class="acard">
+            <div class="aiw"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="atype">Resepsi Pernikahan</div>
+            <div class="abody"><strong>Selasa, 25 Agustus 2026</strong><br>Pukul 11.00 – 15.00 WIB<br><em>Merayakan kebahagiaan bersama</em></div>
+          </div>
+          <div class="acard">
+            <div class="aiw"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="atype">Lokasi</div>
+            <div class="abody">Kediaman Mempelai Wanita<br><strong>Pawenang RT02/RW01</strong><br>Desa Margamukti, Kec. Sumedang Utara<br>Kab. Sumedang, Jawa Barat</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOKASI MAPS SECTION -->
+    <div class="sw bg-b">
+      <!-- SVG Floral Kiri Atas -->
+      <svg class="bg-floral floral-top-left floating-tl" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+        <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+        <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+        <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+        <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+        <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+        <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+        <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+        <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+        <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+      </svg>
+      <!-- SVG Floral Kanan Atas -->
+      <svg class="bg-floral floral-top-right floating-tr" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+        <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+        <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+        <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+        <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+        <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+        <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+        <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+        <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+        <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+      </svg>
+
+      <div class="sep" style="background:transparent;"><svg viewBox="0 0 200 16" fill="none"><line x1="0" y1="8" x2="80" y2="8" stroke="#B89A72" stroke-width="1" opacity=".5"/><circle cx="89" cy="8" r="3" fill="#C4963C" opacity=".4"/><circle cx="100" cy="8" r="5" fill="#C4963C" opacity=".5"/><circle cx="111" cy="8" r="3" fill="#C4963C" opacity=".4"/><line x1="120" y1="8" x2="200" y2="8" stroke="#B89A72" stroke-width="1" opacity=".5"/></svg></div>
+      <div class="sec reveal">
+        <div class="stag">Petunjuk Arah</div>
+        <div class="stit">Lokasi Acara</div>
+        <div class="sdiv"><div class="sdot"></div></div>
+        <div class="lcard">
+          <div style="width:48px;height:48px;background:linear-gradient(135deg,var(--cream-warm),var(--gold-pale));border-radius:50%;border:1px solid var(--gold-light);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--brown-dark)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="lnm">Kediaman Mempelai Wanita</div>
+          <div class="ladr">Pawenang RT 02 / RW 01<br>Desa Margamukti<br>Kecamatan Sumedang Utara<br>Kabupaten Sumedang, Jawa Barat</div>
+          <a href="https://maps.app.goo.gl/EPZFvFfKZLgjDDd79" target="_blank" class="mapbtn"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>Buka Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- GIFT WEDDING SECTION -->
+   <div class="sw bg-a">
+      <svg class="bg-floral floral-top-left floating-tl" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+        <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+        <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+        <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+        <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+        <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+        <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+        <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+        <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+        <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+      </svg>
+      <svg class="bg-floral floral-top-right floating-tr" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+        <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+        <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+        <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+        <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+        <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+        <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+        <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+        <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+        <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+      </svg>
+
+      <div class="sep"><svg viewBox="0 0 200 16" fill="none"><line x1="0" y1="8" x2="80" y2="8" stroke="#B89A72" stroke-width="1" opacity=".5"/><circle cx="89" cy="8" r="3" fill="#C4963C" opacity=".4"/><circle cx="100" cy="8" r="5" fill="#C4963C" opacity=".5"/><circle cx="111" cy="8" r="3" fill="#C4963C" opacity=".4"/><line x1="120" y1="8" x2="200" y2="8" stroke="#B89A72" stroke-width="1" opacity=".5"/></svg></div>
+      <div class="sec reveal">
+        <div class="stag">Tanda Kasih</div>
+        <div class="stit">Gift Wedding</div>
+        <div class="sdiv"><div class="sdot"></div></div>
+        <p class="gintr">Kehadiran dan doa tulus Anda adalah anugerah terbesar bagi kami.<br>Jika berkenan memberikan hadiah, berikut tersedia:</p>
+        
+        <div class="ggrid-atm">
+
+          <div class="atm-card atm-bsi">
+            <div class="atm-content">
+              <div class="atm-top">
+                <div class="atm-chip-wrap">
+                  <div class="atm-chip"></div>
+                  <svg class="atm-contactless" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14c-.6-.7-1-1.6-1-2.5s.4-1.8 1-2.5"/><path d="M12 16.5c-1.3-1.3-2-3-2-4.5s.7-3.2 2-4.5"/><path d="M15.5 19c-2-2-3-4.5-3-7s1-5 3-7"/></svg>
+                </div>
+                <div class="atm-logo">BSI</div>
+              </div>
+              <div class="atm-middle">
+                <div class="atm-number" id="bsi-num-ihin">7246717979</div>
+              </div>
+              <div class="atm-bottom">
+                <div class="atm-holder">
+                  <div class="atm-name">Ihin</div>
+                  <div class="atm-label">BSI Debit</div>
+                </div>
+                <button class="atm-copy" onclick="copyNum('bsi-num-ihin', this)">Salin</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="atm-card atm-bsi">
+            <div class="atm-content">
+              <div class="atm-top">
+                <div class="atm-chip-wrap">
+                  <div class="atm-chip"></div>
+                  <svg class="atm-contactless" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14c-.6-.7-1-1.6-1-2.5s.4-1.8 1-2.5"/><path d="M12 16.5c-1.3-1.3-2-3-2-4.5s.7-3.2 2-4.5"/><path d="M15.5 19c-2-2-3-4.5-3-7s1-5 3-7"/></svg>
+                </div>
+                <div class="atm-logo">BSI</div>
+              </div>
+              <div class="atm-middle">
+                <div class="atm-number" id="bsi-num-winna">7337527714</div>
+              </div>
+              <div class="atm-bottom">
+                <div class="atm-holder">
+                  <div class="atm-name">Winna Fauziah Hartati</div>
+                  <div class="atm-label">BSI Debit</div>
+                </div>
+                <button class="atm-copy" onclick="copyNum('bsi-num-winna', this)">Salin</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="atm-card atm-dana">
+            <div class="atm-content">
+              <div class="atm-top">
+                <div class="atm-chip-wrap">
+                  <div class="atm-chip"></div>
+                  <svg class="atm-contactless" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14c-.6-.7-1-1.6-1-2.5s.4-1.8 1-2.5"/><path d="M12 16.5c-1.3-1.3-2-3-2-4.5s.7-3.2 2-4.5"/><path d="M15.5 19c-2-2-3-4.5-3-7s1-5 3-7"/></svg>
+                </div>
+          </div>
+                <div class="atm-logo">DANA</div>
+              </div>
+              <div class="atm-middle">
+                <div class="atm-number" id="dana-num-winna">085318423220</div>
+              </div>
+              <div class="atm-bottom">
+                <div class="atm-holder">
+                  <div class="atm-name">Winna Fauziah Hartati</div>
+                  <div class="atm-label">E-Wallet</div>
+                </div>
+                <button class="atm-copy" onclick="copyNum('dana-num-winna', this)">Salin</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <div style="margin-top:35px; text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.90rem,1.9vw,.86rem);color:var(--text-soft); font-weight: bold; letter-spacing: 1.2px;">Mohon konfirmasi pengiriman melalui WhatsApp · Jazakumullahu Khairan</div>
+      </div>
+    </div>
+
+    <!-- RSVP / BUKU TAMU SECTION -->
+    <div class="sw bg-b">
+      <!-- SVG Floral Kiri Atas -->
+      <svg class="bg-floral floral-top-left floating-tl" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+        <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+        <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+        <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+        <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+        <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+        <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+        <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+        <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+        <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+      </svg>
+      <!-- SVG Floral Kanan Atas -->
+      <svg class="bg-floral floral-top-right floating-tr" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20,150 C40,140 100,90 150,-20" stroke="#8B9B6A" stroke-width="2" opacity="0.6"></path>
+        <path d="M-30,220 C60,200 130,130 220,-30" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M70,110 C90,140 100,160 80,190" stroke="#8B9B6A" stroke-width="1.5" opacity="0.5"></path>
+        <path d="M50,120 C40,90 80,80 70,110 C80,120 60,130 50,120 Z" fill="#7A8B5A" opacity="0.8"></path>
+        <path d="M100,60 C90,30 130,20 120,50 C130,60 110,70 100,60 Z" fill="#7A8B5A" opacity="0.7"></path>
+        <path d="M120,140 C110,110 150,100 140,130 C150,140 130,150 120,140 Z" fill="#8B9B6A" opacity="0.8"></path>
+        <path d="M70,180 C50,160 90,150 80,170 C90,190 60,190 70,180 Z" fill="#8B9B6A" opacity="0.7"></path>
+        <path d="M80,80 C60,50 110,40 100,80 C140,70 130,120 90,100 C80,140 30,130 60,90 C20,100 30,50 80,80 Z" fill="#D5BCA0" opacity="0.95"></path>
+        <path d="M85,88 C70,65 105,60 98,88 C120,80 115,110 90,98 C85,120 55,115 75,90 C50,95 55,65 85,88 Z" fill="#F5EBE1" opacity="0.6"></path>
+        <circle cx="85" cy="88" r="6" fill="#B38B5F"></circle>
+        <path d="M140,130 C125,110 160,100 155,130 C180,125 175,160 145,145 C140,175 105,165 125,140 C95,145 105,110 140,130 Z" fill="#FDFBF7" opacity="0.95" stroke="#D5BCA0" stroke-width="1"></path>
+        <circle cx="142" cy="138" r="4" fill="#B38B5F"></circle>
+      </svg>
+
+      <div class="sep" style="background:transparent;"><svg viewBox="0 0 200 16" fill="none"><line x1="0" y1="8" x2="80" y2="8" stroke="#B89A72" stroke-width="1" opacity=".5"/><circle cx="89" cy="8" r="3" fill="#C4963C" opacity=".4"/><circle cx="100" cy="8" r="5" fill="#C4963C" opacity=".5"/><circle cx="111" cy="8" r="3" fill="#C4963C" opacity=".4"/><line x1="120" y1="8" x2="200" y2="8" stroke="#B89A72" stroke-width="1" opacity=".5"/></svg></div>
+      <div class="sec reveal">
+        <div class="stag">Tamu Undangan</div>
+        <div class="stit">Ucapan & Daftar Hadir</div>
+        <div class="sdiv"><div class="sdot"></div></div>
+        
+        <div class="fcard">
+          <div class="fgrp">
+            <label class="flbl">Nama Lengkap</label>
+            <input type="text" id="guest-name" class="fctl" placeholder="Masukkan nama Anda...">
+          </div>
+          <div class="fgrp">
+            <label class="flbl">Konfirmasi Kehadiran</label>
+            <select id="guest-hadir" class="fctl">
+              <option value="">— Pilih —</option>
+              <option value="hadir">Insya Allah Hadir</option>
+              <option value="tidak">Tidak Bisa Hadir</option>
+              <option value="belum">Masih Belum Pasti</option>
+            </select>
+          </div>
+          <div class="fgrp">
+            <label class="flbl">Ucapan & Doa</label>
+            <textarea id="guest-message" class="fctl" placeholder="Tulis doa dan ucapan untuk Ihin & Winna..."></textarea>
+          </div>
+          <button class="subbtn" onclick="submitComment()">Kirim Ucapan</button>
+        </div>
+        <div id="comments-list" class="cmtlist"></div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div style="display:flex;align-items:center;justify-content:center;padding:0 0 24px;">
+        <svg viewBox="0 0 200 16" fill="none"><line x1="0" y1="8" x2="80" y2="8" stroke="#B89A72" stroke-width="1" opacity=".5"/><circle cx="89" cy="8" r="3" fill="#C4963C" opacity=".4"/><circle cx="100" cy="8" r="5" fill="#C4963C" opacity=".5"/><circle cx="111" cy="8" r="3" fill="#C4963C" opacity=".4"/><line x1="120" y1="8" x2="200" y2="8" stroke="#B89A72" stroke-width="1" opacity=".5"/></svg>
+      </div>
+      <div class="fnms">IHIN & WINNA</div>
+      <div class="fdt">25 · 08 · 2026</div>
+      <div class="fqt">
+        “Semoga Allah memberkahi kalian, dan melimpahkan keberkahan atas kalian, serta menyatukan kalian berdua dalam kebaikan.”
+        <span class="fqts">— HR. Abu Dawud —</span>
+      </div>
+      <div class="fcrd">Dibuat dengan kasih · Ihin & Winna · 2026</div>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
