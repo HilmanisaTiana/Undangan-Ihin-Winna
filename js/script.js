@@ -4,10 +4,11 @@ document.addEventListener("DOMContentLoaded", function() {
   const nama = urlParams.get('to');
   
   if(nama) {
-    // Mengganti teks dengan nama dari URL (dan mengganti tanda + atau %20 menjadi spasi)
+    // Mengganti teks dengan nama dari URL
     document.getElementById('nama-tamu').innerText = nama;
   }
 });
+
 // ── PETAL ANIMATION ──
 var canvas = document.getElementById('petalCanvas');
 var ctx = canvas.getContext('2d');
@@ -100,15 +101,20 @@ function openInvitation() {
     animLoop();
     startCountdown();
     initReveal();
-    loadComments();
-    document.getElementById('bg-music').play().catch(function(){});
+    loadComments(); // Langsung memuat ucapan dari Google Sheets
+    
+    // Play music fallback if not already playing
+    var m = document.getElementById('musik-latar') || document.getElementById('bg-music');
+    if (m) m.play().catch(function(){});
   }, 850);
 }
 
 // ── MUSIC ──
 var musicOn = true;
 document.getElementById('music-toggle').addEventListener('click', function() {
-  var m = document.getElementById('bg-music');
+  var m = document.getElementById('musik-latar') || document.getElementById('bg-music');
+  if(!m) return;
+
   if(musicOn) { m.pause(); } else { m.play(); }
   musicOn = !musicOn;
   
@@ -172,60 +178,95 @@ function copyNum(id, btn) {
   } else { fallback(); done(); }
 }
 
-// ── COMMENTS / RSVP ──
-var SK = 'winna_ihin_v4';
+// ── COMMENTS / RSVP (GOOGLE SHEETS) ──
 
-function loadComments() { renderComments(JSON.parse(localStorage.getItem(SK) || '[]')); }
-function escH(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
-
-function renderComments(list) {
-  var c = document.getElementById('comments-list');
-  if(!list.length) {
-    c.innerHTML = '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-style:italic;color:var(--text-soft);padding:18px;">Jadilah yang pertama memberikan ucapan...</div>';
-    return;
-  }
-  var html = '';
-  var rev = list.slice().reverse();
-  for(var i = 0; i < rev.length; i++) {
-    var x = rev[i];
-    var cls = x.hadir === 'hadir' ? 'bh' : x.hadir === 'tidak' ? 'bt' : 'bb';
-    var txt = x.hadir === 'hadir' ? 'Hadir' : x.hadir === 'tidak' ? 'Tidak Hadir' : 'Belum Pasti';
-    var badge = x.hadir ? '<span class="cbdg ' + cls + '">' + txt + '</span>' : '';
-    html += '<div class="cmtcard"><div class="cmthdr"><div class="cmtnm">' + escH(x.name) + '</div>' + badge + '</div><div class="cmttxt">' + escH(x.message) + '</div><div class="cmttm">' + x.time + '</div></div>';
-  }
-  c.innerHTML = html;
-}
+// PASTE URL ANDA DI BAWAH INI (Di dalam tanda kutip tunggal)
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw-m1ATlxilFiAfkLNU4r5W1IrL2zLJI_ls8ZgueLhUVvRXng6IKFy9_5ddoUytf4rq4A/exec';
 
 function submitComment() {
-  var name  = document.getElementById('guest-name').value.trim();
-  var hadir = document.getElementById('guest-hadir').value;
-  var msg   = document.getElementById('guest-message').value.trim();
-  
-  if(!name) return alert('Mohon isi nama Anda.');
-  if(!msg)  return alert('Mohon tulis ucapan terlebih dahulu.');
-  
-  var now  = new Date();
-  var time = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
-           + ' \xb7 ' + now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
-           
-  var list = JSON.parse(localStorage.getItem(SK) || '[]');
-  list.push({ name: name, hadir: hadir, message: msg, time: time });
-  localStorage.setItem(SK, JSON.stringify(list));
-  
-  document.getElementById('guest-name').value    = '';
-  document.getElementById('guest-hadir').value   = '';
-  document.getElementById('guest-message').value = '';
-  
-  renderComments(list);
-  document.getElementById('comments-list').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const nama = document.getElementById('guest-name').value.trim();
+  const hadir = document.getElementById('guest-hadir').value;
+  const ucapan = document.getElementById('guest-message').value.trim();
+
+  if(!nama || !ucapan) {
+    alert('Nama dan ucapan harus diisi!');
+    return;
+  }
+
+  const btn = document.querySelector('.subbtn');
+  const teksAsli = btn.innerText;
+  btn.innerText = 'Mengirim...';
+
+  const formData = new FormData();
+  formData.append('nama', nama);
+  formData.append('hadir', hadir);
+  formData.append('ucapan', ucapan);
+
+  fetch(scriptURL, { method: 'POST', body: formData })
+    .then(response => {
+      btn.innerText = teksAsli;
+      document.getElementById('guest-name').value = '';
+      document.getElementById('guest-message').value = '';
+      loadComments(); // Memuat ulang daftar ucapan
+      document.getElementById('comments-list').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    })
+    .catch(error => {
+      console.error('Error!', error.message);
+      btn.innerText = teksAsli;
+      alert('Gagal mengirim ucapan, coba lagi nanti.');
+    });
 }
 
-(function seedComments() {
-  if(!localStorage.getItem(SK)) {
-    localStorage.setItem(SK, JSON.stringify([
-      { name: 'Keluarga Besar Surhana', hadir: 'hadir', message: 'Selamat menempuh hidup baru, Ihin & Winna! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Aamiin 🤲', time: '1 Juni 2026 \xb7 08.00' },
-      { name: 'Sahabat Winna', hadir: 'hadir', message: 'MashaAllah Winna, akhirnya menemukan pasangan hidupnya. Selamat ya bestie! Bahagia selalu 💛', time: '5 Juni 2026 \xb7 10.15' },
-      { name: 'Teman Kampus Ihin', hadir: 'belum', message: 'Selamat Kang Ihin! Alhamdulillah akhirnya... Semoga bahagia selalu! Aamiin 😊', time: '10 Juni 2026 \xb7 19.30' }
-    ]));
+function loadComments() {
+  const list = document.getElementById('comments-list');
+  if(!list) return; 
+  
+  list.innerHTML = '<div style="text-align:center; font-style:italic; color:var(--text-soft); padding:18px;">Memuat ucapan...</div>';
+
+  fetch(scriptURL)
+    .then(res => res.json())
+    .then(data => {
+      list.innerHTML = '';
+      if(data.length === 0) {
+        list.innerHTML = '<div style="text-align:center;font-family:Cormorant Garamond,serif;font-style:italic;color:var(--text-soft);padding:18px;">Jadilah yang pertama memberikan ucapan...</div>';
+        return;
+      }
+      
+      // Reverse agar ucapan terbaru ada di urutan teratas
+      data.reverse().forEach(item => {
+        let cls = item.hadir === 'hadir' ? 'bh' : item.hadir === 'tidak' ? 'bt' : 'bb';
+        let txt = item.hadir === 'hadir' ? 'Hadir' : item.hadir === 'tidak' ? 'Tidak Hadir' : 'Belum Pasti';
+        let badge = item.hadir ? '<span class="cbdg ' + cls + '">' + txt + '</span>' : '';
+
+        // Menghindari karakter berbahaya (escape HTML)
+        let safeNama = item.nama.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        let safeUcapan = item.ucapan.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+        list.innerHTML += `
+          <div class="cmtcard">
+            <div class="cmthdr">
+              <div class="cmtnm">${safeNama}</div>
+              ${badge}
+            </div>
+            <div class="cmttxt">${safeUcapan}</div>
+            <div class="cmttm">${item.waktu}</div>
+          </div>
+        `;
+      });
+    })
+    .catch(error => {
+      list.innerHTML = '<div style="text-align:center; padding:20px; font-size:0.8rem; color:red;">Gagal memuat ucapan.</div>';
+    });
+}
+
+// ── TRIGGER MUSIK SAAT TOMBOL DIKLIK ──
+document.addEventListener("DOMContentLoaded", function() {
+  const tombolBuka = document.querySelector('.btn-light'); 
+  const lagu = document.getElementById('musik-latar');
+
+  if (tombolBuka && lagu) {
+    tombolBuka.addEventListener('click', function() {
+      lagu.play().catch(function(){}); 
+    });
   }
-})();
+});
