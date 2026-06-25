@@ -2,9 +2,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   const urlParams = new URLSearchParams(window.location.search);
   const nama = urlParams.get('to');
-  
   if(nama) {
-    // Mengganti teks dengan nama dari URL
     document.getElementById('nama-tamu').innerText = nama;
   }
 });
@@ -101,10 +99,9 @@ function openInvitation() {
     animLoop();
     startCountdown();
     initReveal();
-    loadComments(); // Langsung memuat ucapan dari Google Sheets
+    loadComments();
     
-    // Play music fallback if not already playing
-    var m = document.getElementById('musik-latar') || document.getElementById('bg-music');
+    var m = document.getElementById('musik-latar');
     if (m) m.play().catch(function(){});
   }, 850);
 }
@@ -112,7 +109,7 @@ function openInvitation() {
 // ── MUSIC ──
 var musicOn = true;
 document.getElementById('music-toggle').addEventListener('click', function() {
-  var m = document.getElementById('musik-latar') || document.getElementById('bg-music');
+  var m = document.getElementById('musik-latar');
   if(!m) return;
 
   if(musicOn) { m.pause(); } else { m.play(); }
@@ -122,7 +119,7 @@ document.getElementById('music-toggle').addEventListener('click', function() {
     ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>'
     : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>';
     
-  this.innerHTML = '<span class="pulse-ring"></span>' + icon;
+  this.innerHTML = '<span class="pring"></span>' + icon;
 });
 
 // ── COUNTDOWN ──
@@ -151,7 +148,7 @@ function initReveal() {
   document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
 }
 
-// ── COPY NUMBERS (Tanpa Spasi Saat Disalin) ──
+// ── COPY NUMBERS ──
 function copyNum(id, btn) {
   var rawText = document.getElementById(id).textContent;
   var textToCopy = rawText.replace(/\s+/g, ''); 
@@ -179,8 +176,6 @@ function copyNum(id, btn) {
 }
 
 // ── COMMENTS / RSVP (GOOGLE SHEETS) ──
-
-// PASTE URL ANDA DI BAWAH INI (Di dalam tanda kutip tunggal)
 const scriptURL = 'https://script.google.com/macros/s/AKfycbw-m1ATlxilFiAfkLNU4r5W1IrL2zLJI_ls8ZgueLhUVvRXng6IKFy9_5ddoUytf4rq4A/exec';
 
 function submitComment() {
@@ -207,7 +202,7 @@ function submitComment() {
       btn.innerText = teksAsli;
       document.getElementById('guest-name').value = '';
       document.getElementById('guest-message').value = '';
-      loadComments(); // Memuat ulang daftar ucapan
+      loadComments();
       document.getElementById('comments-list').scrollIntoView({ behavior: 'smooth', block: 'start' });
     })
     .catch(error => {
@@ -232,13 +227,11 @@ function loadComments() {
         return;
       }
       
-      // Reverse agar ucapan terbaru ada di urutan teratas
       data.reverse().forEach(item => {
         let cls = item.hadir === 'hadir' ? 'bh' : item.hadir === 'tidak' ? 'bt' : 'bb';
         let txt = item.hadir === 'hadir' ? 'Hadir' : item.hadir === 'tidak' ? 'Tidak Hadir' : 'Belum Pasti';
         let badge = item.hadir ? '<span class="cbdg ' + cls + '">' + txt + '</span>' : '';
 
-        // Menghindari karakter berbahaya (escape HTML)
         let safeNama = item.nama.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         let safeUcapan = item.ucapan.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -269,4 +262,34 @@ document.addEventListener("DOMContentLoaded", function() {
       lagu.play().catch(function(){}); 
     });
   }
+  document.addEventListener("scroll", function() {
+  const elements = document.querySelectorAll('.hero-nm, .stag, .stit, .sdesc, .mnm, .abody');
+  
+  elements.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    
+    if (elementTop < windowHeight - 100) {
+      el.classList.add('animate-text', 'is-visible');
+    }
+    function showCover() {
+  const preCover = document.getElementById('pre-cover');
+  const cover = document.getElementById('cover');
+  const coverContent = document.querySelector('.cover-content');
+  
+  preCover.style.transition = "all 0.8s ease";
+  preCover.style.transform = "translateY(-100%)";
+  
+  setTimeout(function() {
+    preCover.classList.add('hidden');
+    cover.classList.add('active');
+    
+    // Memberikan delay singkat sebelum memicu animasi
+    setTimeout(function() {
+      coverContent.classList.add('animate-active');
+    }, 100);
+  }, 800);
+}
+  });
+});
 });

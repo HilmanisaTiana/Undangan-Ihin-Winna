@@ -8,7 +8,6 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
-/* ================= Latar Belakang Pattern Global ================= */
 body { 
   font-family: 'Lato', sans-serif; 
   background-color: var(--cream); 
@@ -43,7 +42,7 @@ body {
 
 .cover-bism { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 6vw, 3.2rem); color: var(--gold-pale); font-weight: 300; margin-bottom: 0; }
 .cover-bism-sub { font-family: 'Cinzel', serif; font-size: clamp(0.5rem, 1.4vw, 0.58rem); letter-spacing: 5px; text-transform: uppercase; color: white; margin-bottom: 14px; font-weight: bold; text-shadow: 0 1px 2px rgba(135, 105, 7, 0.59); }
-.cover-label { font-family: 'Cinzel', serif; font-size: clamp(0.52rem, 1.5vw, 0.62rem); letter-spacing: 6px; text-transform: uppercase; color: white; margin-bottom: 8px; font-weight: bold; }
+.cover-label { font-family: 'Cinzel', serif; font-size: clamp(0.8rem, 1.5vw, 0.62rem); letter-spacing: 6px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; font-weight: bold; }
 .cover-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: clamp(2.0rem, 7vw, 4.5rem); color: #FFFDF8; letter-spacing: clamp(3px, 1vw, 8px); line-height: 1.0; text-shadow: 0 2px 20px rgba(0, 0, 0, .28); }
 .cover-amp { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: clamp(1.5rem, 4.5vw, 2.6rem); color: var(--gold-light); display: block; margin: 3px 0; }
 .cover-div { display: flex; align-items: center; gap: 10px; margin: 13px auto; width: min(220px, 68%); }
@@ -69,25 +68,24 @@ body {
 #main-content.visible { display: block; }
 
 /* HERO */
-.hero { position: relative; overflow: hidden; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 20px 60px; background: linear-gradient(170deg, rgba(234,213,168,0.7) 0%, rgba(253,246,232,0.85) 55%, rgba(234,213,168,0.7) 100%); }
+.hero { position: relative; overflow: hidden; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 20px 60px; background: linear-gradient(170deg, rgba(238, 188, 88, 0.7) 0%, rgba(236, 216, 176, 0.85) 55%, rgba(234,213,168,0.7) 100%); }
 .sw { position: relative; overflow: hidden; }
-.bg-a { background: linear-gradient(135deg, rgba(253,246,232,0.75) 0%, rgba(242,228,200,0.65) 100%); }
-.bg-b { background: linear-gradient(135deg, rgba(242,228,200,0.75) 0%, rgba(234,213,168,0.65) 100%); }
+.bg-a { background: linear-gradient(135deg, rgba(238, 199, 122, 0.75) 0%, rgba(242,228,200,0.65) 100%); }
+.bg-b { background: linear-gradient(135deg, rgba(228, 203, 148, 0.877) 0%, rgba(238, 201, 123, 0.65) 100%); }
 
 .hero-inner { width: 100%; max-width: 650px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
 .hero-bism { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 7vw, 3.6rem); color: var(--brown-dark); font-weight: 300; margin-bottom: 0; }
 .hero-bism-sub { font-family: 'Cinzel', serif; font-size: clamp(0.90rem, 1.4vw, 0.6rem); letter-spacing: 5px; text-transform: uppercase; color: var(--text-soft); margin-bottom: 26px; font-weight: bold; }
-.hero-eye { font-family: 'Cinzel', serif; font-size: clamp(0.90rem, 1.5vw, 0.62rem); letter-spacing: 7px; text-transform: uppercase; color: var(--brown-mid); margin-bottom: 12px; font-weight: bold; }
 .hero-nm { font-family: 'Playfair Display', serif; font-weight: 700; font-size: clamp(1.4rem, 4.5vw, 2.5rem); color: var(--brown-deep); letter-spacing: clamp(1px, .4vw, 3px); line-height: 1.2; }
 .hero-amp { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: clamp(1.3rem, 4vw, 2.2rem); color: var(--gold); display: block; margin: 4px 0; }
 .hdiv { display: flex; align-items: center; gap: 12px; margin: 18px auto; width: min(300px, 75%); }
 .hdiv::before, .hdiv::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); }
 .hero-date { font-family: 'Cinzel', serif; font-size: clamp(0.65rem, 2vw, 0.82rem); letter-spacing: 4px; color: var(--brown-dark); text-transform: uppercase; font-weight: bold; }
 .hero-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(0.86rem, 2.2vw, 1.06rem); color: rgba(95, 61, 6, 0.904); max-width: 480px; line-height: 1.75; margin: 20px auto 0; text-align: center; font-weight: bold;}
-.hero-qs { display: block; font-family: 'Cinzel', serif; font-style: normal; font-size: 0.90rem; letter-spacing: 3px; color: var(--gold); margin-top: 7px; font-wight: bold; }
+.hero-qs { display: block; font-family: 'Cinzel', serif; font-style: normal; font-size: 0.90rem; letter-spacing: 3px; color: var(--gold); margin-top: 7px; font-weight: bold; }
 
 .sec { padding: clamp(46px, 7vw, 70px) clamp(16px, 5vw, 24px); max-width: 840px; margin: 0 auto; position: relative; z-index: 2;}
-.stag { font-family: 'Cinzel', serif;  font-size: clamp(0.90rem, 1.5vw, 0.62rem); letter-spacing: 7px; text-transform: uppercase; color: var(--brown-mid); text-align: center; margin-bottom: 7px; font-weight: bold; }
+.stag { font-family: 'Cinzel', serif; font-size: clamp(0.90rem, 1.5vw, 0.62rem); letter-spacing: 7px; text-transform: uppercase; color: var(--brown-mid); text-align: center; margin-bottom: 7px; font-weight: bold; }
 .stit { font-family: 'Playfair Display', serif; font-weight: 600; font-size: clamp(1.35rem, 4vw, 2.1rem); color: var(--brown-deep); text-align: center; }
 .sdiv { display: flex; align-items: center; gap: 9px; margin: 12px auto 32px; width: min(170px, 52%); }
 .sdiv::before, .sdiv::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--brown-light), transparent); }
@@ -95,8 +93,7 @@ body {
 .sep { display: flex; align-items: center; justify-content: center; padding: 7px 0; position: relative; z-index: 2; }
 .sep svg { width: clamp(120px, 28vw, 200px); height: 16px; }
 
-/* ==== HIASAN BUNGA SVG BERGERAK ==== */
-/* Perbaikan: Dihapus pengaturan titik poros (transform-origin) agar default di tengah. */
+/* ==== SVG FLORAL ACCENTS ==== */
 .bg-floral {
   position: absolute;
   width: clamp(140px, 28vw, 240px);
@@ -104,7 +101,6 @@ body {
   pointer-events: none;
   filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.06));
 }
-
 .floral-top-left { top: -10px; left: -10px; }
 .floral-top-right { top: -10px; right: -10px; transform: scaleX(-1); }
 .floral-bottom-left { bottom: -10px; left: -10px; transform: scaleY(-1); }
@@ -120,7 +116,7 @@ body {
 @keyframes float-bl { 0% { transform: scaleY(-1) translateY(0) rotate(0deg); } 100% { transform: scaleY(-1) translateY(-12px) rotate(-4deg); } }
 @keyframes float-br { 0% { transform: scale(-1) translateY(0) rotate(0deg); } 100% { transform: scale(-1) translateY(-12px) rotate(4deg); } }
 
-/* ==== KOMPONEN KARTU ==== */
+/* ==== CARDS ==== */
 .mcard, .ccard, .acard, .lcard, .fcard {
   background: rgba(255, 253, 248, 0.85); 
   backdrop-filter: blur(6px); 
@@ -138,13 +134,13 @@ body {
 .mcard::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, transparent, var(--gold-light), transparent); }
 .micon { width: clamp(40px, 6vw, 52px); height: clamp(40px, 6vw, 52px); background: linear-gradient(135deg, var(--cream-warm), var(--gold-pale)); border-radius: 50%; border: 1px solid var(--gold-light); display: flex; align-items: center; justify-content: center; margin: 0 auto 11px; }
 .micon svg { width: 19px; height: 19px; fill: var(--brown-dark); }
-.mnm { font-family: 'Playfair Display', serif; font-size: 20.1px; color: var(--brown-deep); letter-spacing: .2px; line-height: 1.2;font-weight:bold; }
+.mnm { font-family: 'Playfair Display', serif; font-size: 20.1px; color: var(--brown-deep); letter-spacing: .2px; line-height: 1.2; font-weight: bold; }
 .mgl { font-family: 'Cinzel', serif; font-size: clamp(.57rem, 1.4vw, .66rem); color: var(--gold); letter-spacing: 2px; margin: 3px 0 9px; }
 .mrol { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(.76rem, 1.9vw, .88rem); color: var(--text-soft); margin-bottom: 11px; font-weight: bold; }
 .mpl { font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: 3px; text-transform: uppercase; color: var(--brown-light); margin-bottom: 5px; font-weight: bold; }
 .mpar { font-family: 'Lato', sans-serif; font-size: clamp(.74rem, 1.8vw, .82rem); color: var(--text-mid); line-height: 1.6; }
 .mpar strong { color: var(--brown-dark); font-weight: 600; }
-.mpar .ap { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--gold-light); margin: 0 4px;font-weight: bold; }
+.mpar .ap { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--gold-light); margin: 0 4px; font-weight: bold; }
 .mamp { font-family: 'Cormorant Garamond', serif; font-weight: bold; font-style: italic; font-size: clamp(1.9rem, 4.5vw, 2.7rem); color: var(--gold); text-align: center; padding: 0 10px; white-space: nowrap; }
 .igbtn { display: inline-flex; align-items: center; justify-content: center; width: clamp(32px, 5vw, 40px); height: clamp(32px, 5vw, 40px); border-radius: 10px; margin-top: 13px; background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); transition: transform .3s, box-shadow .3s; box-shadow: 0 3px 12px rgba(200, 50, 100, .2); text-decoration: none; }
 .igbtn:hover { transform: scale(1.1); box-shadow: 0 6px 18px rgba(200, 50, 100, .3); }
@@ -193,14 +189,10 @@ body {
 .atm-card { position: relative; width: 100%; max-width: 360px; height: 210px; border-radius: 16px; padding: 22px 24px; color: white; text-align: left; box-shadow: 0 12px 28px rgba(92, 64, 32, 0.18); display: flex; flex-direction: column; overflow: hidden; font-family: 'Lato', sans-serif; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .atm-card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(92, 64, 32, 0.25); }
 
-/* Tekstur kartu fisik */
 .atm-card::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 6px); z-index: 1; pointer-events: none; }
 .atm-card::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.15) 0%, transparent 60%); z-index: 1; pointer-events: none; transform: rotate(30deg); }
 
-/* Warna DANA */
 .atm-dana { background: linear-gradient(135deg, #118EEA 0%, #084c82 100%); }
-
-/* Warna BSI (Putih) */
 .atm-bsi { background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); color: #3A2810; }
 .atm-bsi .atm-logo, .atm-bsi .atm-number, .atm-bsi .atm-name { text-shadow: none; }
 .atm-bsi .atm-copy { background: rgba(0, 0, 0, 0.04); border: 1px solid rgba(0, 0, 0, 0.15); color: #3A2810; }
@@ -217,7 +209,6 @@ body {
 .atm-contactless { width: 22px; height: 22px; opacity: 0.8; }
 .atm-logo { font-size: 1.5rem; font-weight: 900; font-family: sans-serif; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
 
-/* Nomor timbul (Emboss) */
 .atm-middle { margin-top: auto; margin-bottom: 12px; }
 .atm-number { font-family: 'Courier New', Courier, monospace; font-size: 1.5rem; font-weight: 700; letter-spacing: 3px; text-shadow: -1px -1px 0 rgba(0,0,0,0.4), 1px 1px 0 rgba(255,255,255,0.3); }
 .atm-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
@@ -236,7 +227,6 @@ body {
 .fctl { width: 100%; background: var(--cream); border: 1px solid var(--cream-mid); border-radius: 7px; padding: clamp(9px, 1.7vw, 12px) 12px; color: var(--text-dark); font-family: 'Lato', sans-serif; font-size: clamp(.90rem, 2vw, .9rem); outline: none; transition: border-color .3s, box-shadow .3s; }
 .fctl:focus { border-color: var(--gold-light); box-shadow: 0 0 0 3px rgba(196, 150, 60, .08); }
 textarea.fctl { resize: vertical; min-height: 85px; }
-select.fctl option { background: var(--white); }
 .subbtn { width: 100%; padding: clamp(11px, 2vw, 14px); background: linear-gradient(135deg, var(--brown-dark), var(--brown-mid)); border: none; border-radius: 7px; color: var(--cream); font-family: 'Cinzel', serif; font-size: clamp(.90rem, 1.6vw, .67rem); font-weight: 600; letter-spacing: 5px; text-transform: uppercase; cursor: pointer; transition: all .3s; margin-top: 4px; }
 .subbtn:hover { background: linear-gradient(135deg, var(--brown-deep), var(--brown-dark)); transform: translateY(-2px); box-shadow: 0 7px 20px rgba(92, 64, 32, .17); }
 
@@ -258,9 +248,9 @@ select.fctl option { background: var(--white); }
 .fdt { font-family: 'Cinzel', serif; font-size: clamp(.56rem, 1.4vw, .66rem); letter-spacing: 5px; text-transform: uppercase; color: var(--brown-dark); margin-bottom: 18px; font-weight: bold; }
 .fqt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(.84rem, 2vw, .98rem); color: var(--brown-dark); max-width: 350px; margin: 0 auto; line-height: 1.75; text-align: center; font-weight: bold; }
 .fqts { display: block; font-family: 'Cinzel', serif; font-style: normal; font-size: .80rem; letter-spacing: 3px; color: var(--gold); margin-top: 6px; font-weight: bold; }
-.fcrd { margin-top: 22px; font-size: .66rem; color: var(--brown-dark); letter-spacing: 2px;font-weight: bold; }
+.fcrd { margin-top: 22px; font-size: .66rem; color: var(--brown-dark); letter-spacing: 2px; font-weight: bold; }
 
-/* MUSIC & REVEAL */
+/* MISC */
 #music-toggle { position: fixed; bottom: clamp(14px, 2.5vw, 22px); right: clamp(14px, 2.5vw, 22px); z-index: 1000; width: clamp(40px, 5.5vw, 48px); height: clamp(40px, 5.5vw, 48px); background: var(--brown-dark); border: none; border-radius: 50%; color: var(--cream); cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(92, 64, 32, .3); transition: all .3s; }
 #music-toggle.visible { display: flex; }
 #music-toggle:hover { transform: scale(1.08); }
@@ -268,40 +258,220 @@ select.fctl option { background: var(--white); }
 @keyframes pulser { 0% { transform: scale(1); opacity: .5 } 100% { transform: scale(1.7); opacity: 0 } }
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-/* Membuat teks tombol lebih tebal */
-.bold-btn span {
-  font-weight: 800 !important;
-  letter-spacing: 2px !important;
-}
 
-/* Menggeser konten cover ke atas (diatur dengan padding-bottom yang dikurangi) */
-#cover .cover-content {
-  padding-bottom: clamp(50px, 30vw, 120px) !important;
-}
+.bold-btn span { font-weight: 800 !important; letter-spacing: 2px !important; }
+#cover .cover-content { padding-bottom: clamp(50px, 30vw, 120px) !important; }
+.btn-light, .btn-dark { border-width: 2px !important; box-shadow: 0 4px 12px rgba(34, 31, 5, 0.667); border-radius: 50px; font-weight: 800; }
+.btn-light:hover { background: rgba(115, 74, 7, 0.904); }
 
-/* Memperjelas kontras tombol agar lebih menonjol */
-.btn-light, .btn-dark {
-  border-width: 2px !important;
-  box-shadow: 0 4px 12px rgba(34, 31, 5, 0.667);
-  border-radius: 50px;
-  font-weight: 800;
-}
-
-.btn-light:hover {
-  background: rgba(115, 74, 7, 0.904);
-}
-.ucapan{
-  font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(0.86rem, 2.2vw, 1.06rem); color: var(--text-soft); max-width: 480px; line-height: 1.75; margin: 20px auto 0; text-align: center; 
-}
-
-/* Teks Pengantar (Assalamualaikum) */
 .sdesc {
   font-family: 'Cormorant Garamond', serif; 
-  font-size: clamp(0.85rem, 2vw, 0.95rem);
-  color: var(--text-mid);
-  line-height: 1.7;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 30px auto; /* Membuat teks rata tengah dan memberi jarak ke bawah */
-  font-size: clamp(0.86rem, 2.2vw, 1.06rem); color: rgba(95, 61, 6, 0.904); max-width: 480px; line-height: 1.75; margin: 20px auto 0; text-align: center; font-weight: bold;
+  color: rgba(95, 61, 6, 0.904); 
+  max-width: 580px; 
+  line-height: 1.75; 
+  margin: 16px auto 0; 
+  text-align: center; 
+  font-weight: bold;
+  font-size: clamp(0.90rem, 2.2vw, 1.06rem);
 }
+.text-center { text-align: center; }
+
+/* ================= BUNGA DEKORASI ================= */
+.bunga-pojok {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: clamp(160px, 38vw, 320px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.88;
+  display: block;
+}
+
+/* Pastikan section punya overflow: hidden dan position: relative */
+/* Pastikan section punya overflow: hidden dan position: relative */
+.hero,
+.sw,
+.footer {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pastikan konten di atas bunga */
+.hero-inner,
+.sec,
+.container,
+.cover-content,
+.pre-content,
+.footer > * {
+  position: relative;
+  z-index: 2;
+}
+/* --- EFEK BUNGA MIRROR --- */
+
+/* Bunga untuk bagian bawah section (Normal) */
+.bunga-bawah {
+  position: absolute;
+  bottom: 0;       /* Menempel persis di garis bawah */
+  right: 0;        /* Menempel di kanan */
+  width: 150px;    /* Sesuaikan ukuran bunga di sini */
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Bunga untuk bagian atas section (Efek Mirror) */
+.bunga-atas-mirror {
+  position: absolute;
+  top: 0;          /* Menempel persis di garis atas */
+  right: 0;        /* Menempel di kanan */
+  width: 150px;    /* Lebarnya harus SAMA dengan .bunga-bawah */
+  height: auto;
+  z-index: 1;
+  transform: scaleY(-1); /* Ini kode rahasia untuk membalikkan gambar */
+  pointer-events: none;
+}
+/* --- EFEK BUNGA MIRROR KANAN --- */
+.bunga-bawah {
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 150px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bunga-atas-mirror {
+  position: absolute;
+  top: -2px;
+  right: 0;
+  width: 150px;
+  height: auto;
+  z-index: 1;
+  transform: scaleY(-1);
+  pointer-events: none;
+}
+
+/* --- EFEK BUNGA MIRROR KIRI --- */
+.bunga-kiri-bawah {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 150px;
+  height: auto;
+  z-index: 1;
+  transform: scaleX(-1); /* Membalikkan gambar secara horizontal ke kiri */
+  pointer-events: none;
+}
+
+.bunga-kiri-atas-mirror {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 150px;
+  height: auto;
+  z-index: 1;
+  transform: scale(-1, -1); /* Membalikkan gambar secara horizontal dan vertikal */
+  pointer-events: none;
+}
+
+/* --- EFEK BUNGA MIRROR KANAN & KIRI --- */
+
+/* Mengatur ukuran dan opasitas umum bunga */
+.bunga-bawah, 
+.bunga-atas-mirror, 
+.bunga-kiri-bawah, 
+.bunga-kiri-atas-mirror {
+  width: 150px;       /* Ukuran diperbesar dari 150px ke 220px */
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.5;       /* Opasitas diturunkan menjadi 60% agar lebih lembut */
+  position: absolute;
+}
+
+/* Penempatan bunga bagian bawah */
+.bunga-bawah {
+  bottom: -2px;
+  right: 0;
+}
+
+.bunga-kiri-bawah {
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(-1); /* Membalik ke kiri */
+}
+
+/* Penempatan bunga bagian atas */
+.bunga-atas-mirror {
+  top: -2px;
+  right: 0;
+  transform: scaleY(-1); /* Membalik ke bawah */
+}
+
+.bunga-kiri-atas-mirror {
+  top: -2px;
+  left: 0;
+  transform: scale(-1, -1); /* Membalik ke bawah dan ke kiri */
+}
+/* Animasi Teks */
+.animate-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-text.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tambahkan sedikit efek *glow* atau transisi pada hover (opsional) */
+.hero-nm {
+  transition: letter-spacing 0.5s ease;
+}
+
+.hero-nm:hover {
+  letter-spacing: 5px; /* Nama mempelai akan melebar saat disentuh */
+}
+/* Animasi khusus untuk teks Pre-Cover */
+.pre-content > div {
+  animation: slideUpText 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideUpText {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Memberi jeda waktu muncul (delay) agar rapi urutannya */
+.pre-to { animation-delay: 0.2s; }
+.pre-recipient { animation-delay: 0.4s; }
+.pre-sub { animation-delay: 0.6s; }
+.pre-divider { animation-delay: 0.8s; }
+.pre-invite-label { animation-delay: 1.0s; }
+.pre-names-preview { animation-delay: 1.2s; }
+.btn-dark { animation: slideUpText 1s ease-out 1.4s forwards; }
+/* Animasi untuk elemen di halaman Cover */
+.cover-content > div {
+  opacity: 0;
+  visibility: hidden; /* Menggantikan opacity agar lebih aman */
+  transform: translateY(15px);
+  transition: all 1.2s ease-out;
+}
+
+/* Class pemicu animasi */
+.cover-content.animate-active > div {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mengembalikan pengaturan agar teks tidak hilang jika animasi gagal */
+#cover.active .cover-content > div {
+  opacity: 1; 
+  visibility: visible;
+}
+
